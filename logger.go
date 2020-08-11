@@ -18,7 +18,7 @@ type infoWriter struct {
 	timeFormat string
 }
 
-var LogOn = false;
+var LogOn = false
 
 func (w errorWriter) Write(b []byte) (n int, err error) {
 	if LogOn == true {
@@ -29,7 +29,7 @@ func (w errorWriter) Write(b []byte) (n int, err error) {
 		line, remainder := stra[0], stra[1:]
 		w.Writer.Write([]byte(line))
 		stra2 := strings.Join(remainder, " ")
-		stra2 += "\n";
+		stra2 += "\n"
 		w.Writer.Write([]byte(" "))
 		w.Writer.Write([]byte("\033[0;31m"))
 		w.Writer.Write([]byte(stra2))
@@ -47,7 +47,7 @@ func (w infoWriter) Write(b []byte) (n int, err error) {
 		line, remainder := stra[0], stra[1:]
 		w.Writer.Write([]byte(line))
 		stra2 := strings.Join(remainder, " ")
-		stra2 += "\n";
+		stra2 += "\n"
 		w.Writer.Write([]byte(" "))
 		w.Writer.Write([]byte("\033[0m"))
 		w.Writer.Write([]byte(stra2))
