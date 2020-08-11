@@ -1,4 +1,4 @@
-package diskfile
+package logger
 
 import (
 	"bufio"
